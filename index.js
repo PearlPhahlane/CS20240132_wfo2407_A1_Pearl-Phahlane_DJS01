@@ -16,7 +16,7 @@ const fuelBurnRateKgPerSecond = 0.5; // fuel burn rate (kg/s)
 
 //P: function to convert acceleration from m/s^2 to km/h^2
 const convertAccelartaionToKmh2 = (accelerationMs2) => {
-  return accelerationMs2 * 12960; // 3600^2 * 0.001(meters to km- 1km = 0.001m)
+  return accelerationMs2 * 12960; //P: h^2 will be 3600^2 * 0.001(meters to km- 1km = 0.001m)
 };
 
 //P: convert accelaration from m/s^2 to km/h^2
