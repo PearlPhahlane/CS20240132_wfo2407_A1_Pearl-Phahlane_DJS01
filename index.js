@@ -19,7 +19,7 @@ const convertAccelartaionToKmh2 = (accelerationMs2) => {
   return accelerationMs2 * 12960; //P: h^2 will be 3600^2 * 0.001(meters to km- 1km = 0.001m)
 };
 
-//P: convert accelaration from m/s^2 to km/h^2
+//P: function call - convert accelaration from m/s^2 to km/h^2
 const accelerationKmh2 = convertAccelartaionToKmh2(accelerationMs2);
 
 //P: convert time from seconds to hours
@@ -35,7 +35,7 @@ const calcNewVel = (initialVelocityKmh, accelerationKmh2, timeHours) => {
 const newDistance = initialDistanceKm + (initialVelocityKmh * timeHours); // to calculate new distance
 const remainingFuelKg = initialFuel - (fuelBurnRateKgPerSecond * timeSeconds); //to calculate remailing fuel 
 
-//P: calculate new velocity, catch potential errors
+//P: calculate new velocity, error handling- catch potential errors
 let newVelocityKmh;
 try {
   newVelocityKmh = calcNewVel(initialVelocityKmh, accelerationKmh2, timeHours);
