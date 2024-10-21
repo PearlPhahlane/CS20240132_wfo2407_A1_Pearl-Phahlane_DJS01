@@ -27,6 +27,14 @@ const timeHours = timeSeconds / 3600;
 //function to calculate the new velocity 
 const calcNewVel = (initialVelocityKmh, accelerationKmh2, timeHours) => {
   return initialVelocityKmh + accelerationKmh2 * timeHours;
+  //validate inputs
+  if(typeof initialVelocityKmh !== 'number' || typeof accelerationKmh2 !== 'number' || timeHours !== 'number') {
+    throw new Error('Ivalid input: velocity, acceleration, and time must be a number.')
+  }
+  if (timeHours < 0) {
+    throw new Error('Invalid time: time must be positive.')
+  }
+  return initialVelocityKmh + (accelerationKmh2 * timeHours);
   
 };
 
