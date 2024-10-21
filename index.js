@@ -9,8 +9,8 @@
 const initialVelocityKmh = 10000; // velocity (km/h)
 const accelerationMs2 = 3; // acceleration (m/s^2)
 const timeSeconds = 3600; // seconds (1 hour)
-const distanceKm = 0; // distance (km)
-const remainingFuelKg = 5000; // remaining fuel (kg)
+const initialDistanceKm = 0; // distance (km)
+const initialFuel = 5000; // remaining fuel (kg)
 const fuelBurnRateKgPerSecond = 0.5; // fuel burn rate (kg/s)
 
 //function to convert acceleration from m/s^2 to km/h^2
@@ -38,6 +38,10 @@ const calcNewVel = (initialVelocityKmh, accelerationKmh2, timeHours) => {
   
 };
 
+
+//calculate new values
+const newDistance = initialDistanceKm + (initialVelocityKmh * timeHours); // to calculate new distance
+const remainingFuelKg = initialFuel - (fuelBurnRateKgPerSecond * timeSeconds); //to calculate remailing fuel 
 
 //const d2 = d + (vel*time) //calcultes new distance
 //const rf = fbr*time //calculates remaining fuel
