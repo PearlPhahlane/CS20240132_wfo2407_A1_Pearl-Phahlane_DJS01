@@ -13,6 +13,11 @@ const distanceKm = 0; // distance (km)
 const remainingFuelKg = 5000; // remaining fuel (kg)
 const fuelBurnRateKgPerSecond = 0.5; // fuel burn rate (kg/s)
 
+//function to convert acceleration from m/s^2 to km/h
+const convertAccelartaionToKmh2 = (accelerationMs2) => {
+  return accelerationMs2 * 12960; // 3600^2 * 0.001(meters to km- 1km = 0.001m)
+}
+
 
 const d2 = d + (vel*time) //calcultes new distance
 const rf = fbr*time //calculates remaining fuel
